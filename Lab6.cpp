@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//DODAĆ FUNKCJE WCZYTAJ DO KONTENERA Z PLIKU
+
 int main() {
 	try {
 		Baza b;

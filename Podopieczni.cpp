@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 #include "Podopieczni.h"
 
 using namespace std;
@@ -11,14 +12,24 @@ Podopieczny::~Podopieczny() {}
 
 // Klasa
 void Podopieczny::wpisz() {
-	cout << endl << "DODAWANIE OSOBY" << endl;
-	cout << "Imie: ";
-	getline(cin, imie);
-	cout << "Nazwisko: ";
-	getline(cin, nazwisko);
-	cout << "Cena za zajecia: ";
-	cin >> cena_za_zajecia;
-	cin.ignore();
+    fstream plik;
+    plik.open("podopieczni_lista.txt", ios::app);
+    if (plik.good() == true) {
+	    cout << endl << "DODAWANIE OSOBY" << endl;
+	    cout << "Imie: ";
+	    getline(cin, imie);
+	    cout << "Nazwisko: ";
+	    getline(cin, nazwisko);
+	    cout << "Cena za zajecia: ";
+	    cin >> cena_za_zajecia;
+	    cin.ignore();
+        plik << imie << endl;
+        plik << nazwisko << endl;
+        plik << cena_za_zajecia << endl;
+    } else {
+        cout << "Blad odczytu pliku";
+    }
+    plik.close();
 }
 void Podopieczny::pokaz() {
 	cout << imie << " " << nazwisko << " " << cena_za_zajecia << " zl" << endl;
@@ -39,7 +50,7 @@ float Podopieczny::podaj_cene() {
 // Kontener klasy vector
 void Baza::dodaj() {
 	char decyzja = 't';
-	while (decyzja == 't') {
+	    while (decyzja == 't') {
 		Podopieczny tmp_czlowiek;
 		tmp_czlowiek.wpisz();
 		lista.push_back(tmp_czlowiek);

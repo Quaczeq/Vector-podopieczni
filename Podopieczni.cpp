@@ -51,14 +51,14 @@ void Baza::dodaj() {
 }
 void Baza::pokaz_liste() {
 	cout << endl << "LISTA OSOB" << endl;
-	for (int i = 0; i < lista.size(); i++) {
+	for (unsigned int i = 0; i < lista.size(); i++) {
 		cout << i + 1 << ". ";
 		lista[i].pokaz();
 	}
 	cout << endl;
 }
 void Baza::usun() {
-	int id;
+	unsigned int id;
 	cout << endl << "USUWANIE REKORDU" << endl;
 	cout << "Podaj numer ID: ";
 	cin >> id;
@@ -74,7 +74,7 @@ void Baza::wyszukaj_po_imieniu() {
 	cout << "Podaj imie do wyszukania: ";
 	getline(cin, imie);
 	bool znaleziono = false;
-	for (int i = 0; i < lista.size(); i++) {
+	for (unsigned int i = 0; i < lista.size(); i++) {
 		if (lista[i].podaj_imie() == imie) {
 			lista[i].pokaz();
 			znaleziono = true;
@@ -91,7 +91,7 @@ void Baza::wyszukaj_po_nazwisku() {
 	cout << "Podaj nazwisko do wyszukania: ";
 	getline(cin, nazwisko);
 	bool znaleziono = false;
-	for (int i = 0; i < lista.size(); i++) {
+	for (unsigned int i = 0; i < lista.size(); i++) {
 		if (lista[i].podaj_nazwisko() == nazwisko) {
 			lista[i].pokaz();
 			znaleziono = true;
@@ -102,7 +102,7 @@ void Baza::wyszukaj_po_nazwisku() {
 	}
 }
 void Baza::zmien_cene() {
-	int id;
+	unsigned int id;
 	float nowa_cena;
 	cout << endl << "ZMIANA CENY" << endl;
 	cout << "Podaj numer ID: ";

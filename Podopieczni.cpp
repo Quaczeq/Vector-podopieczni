@@ -32,8 +32,9 @@ void Podopieczny::wpisz() {
     plik.close();
 }
 void Podopieczny::pokaz() {
-	cout << imie << " " << nazwisko << " " << cena_za_zajecia << " zl" << endl;
+	cout << imie << " " << nazwisko << " " << cena_za_zajecia << " PLN" << endl;
 }
+
 void Podopieczny::zmien_cene(float c) {
 	cena_za_zajecia = c;
 }
@@ -62,11 +63,20 @@ void Baza::dodaj() {
 }
 void Baza::pokaz_liste() {
 	cout << endl << "LISTA OSOB" << endl;
-	for (unsigned int i = 0; i < lista.size(); i++) {
-		cout << i + 1 << ". ";
-		lista[i].pokaz();
-	}
-	cout << endl;
+	fstream plik;
+    string linia;
+    int nr_linii;
+
+    plik.open("podopieczni_lista.txt", ios::in);
+    if (plik.good() == true) {
+        while (getline(plik,linia)){
+            nr_linii++;
+            cout << linia << " ";
+            if (nr_linii % 3 == 0) cout << "PLN" << endl;
+        }
+    } else {
+        cout << "Blad odczytu pliku";
+    }
 }
 void Baza::usun() {
 	unsigned int id;

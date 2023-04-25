@@ -49,6 +49,10 @@ float Podopieczny::podaj_cene() {
 }
 
 // Kontener klasy vector
+void Baza::wczytaj(){
+    
+}
+
 void Baza::dodaj() {
 	char decyzja = 't';
 	    while (decyzja == 't') {
@@ -77,6 +81,7 @@ void Baza::pokaz_liste() {
     } else {
         cout << "Blad odczytu pliku";
     }
+    plik.close();
 }
 void Baza::usun() {
 	unsigned int id;

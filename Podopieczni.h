@@ -36,5 +36,4 @@ public:
 	void pokaz_liste_z_kontenera();
 	void wyszukaj_po_imieniu();
 	void wyszukaj_po_nazwisku();
-	void zmien_cene();
 };

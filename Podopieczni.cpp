@@ -188,16 +188,3 @@ void Baza::wyszukaj_po_nazwisku() {
 		cout << "Nie znaleziono" << endl;
 	}
 }
-void Baza::zmien_cene() {
-	unsigned int id;
-	float nowa_cena;
-	cout << endl
-		 << "ZMIANA CENY" << endl;
-	cout << "Podaj numer ID: ";
-	cin >> id;
-	if (id > lista.size())
-		throw runtime_error("Nie ma takiego rekordu");
-	cout << "Nowa cena: ";
-	cin >> nowa_cena;
-	lista[id - 1].zmien_cene(nowa_cena);
-}

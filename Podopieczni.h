@@ -24,7 +24,7 @@ public:
 class Baza {
 	vector<Podopieczny> lista;
 public:
-    void wczytaj(;)
+    void wczytaj();
 	void dodaj();
 	void usun();
 	void pokaz_liste();

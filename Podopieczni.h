@@ -31,7 +31,7 @@ class Baza
 public:
 	void wczytaj();
 	void dodaj_podopiecznego();
-	void usun();
+	void usun(); //tylko operacja na kontenerze
 	void pokaz_liste_z_pliku();
 	void pokaz_liste_z_kontenera();
 	void wyszukaj_po_imieniu();
